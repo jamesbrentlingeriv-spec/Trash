@@ -91,9 +91,12 @@
       max-width: 42rem;
       width: 100%;
       position: relative;
-      padding: 2rem;
+      padding: 1.5rem;
       transform: scale(0.9) translateY(20px);
       transition: transform 0.3s;
+      margin: 0 1rem;
+      max-height: 90vh;
+      overflow-y: auto;
     }
 
     .modal-overlay.active .modal-content {
@@ -116,29 +119,31 @@
 
 <body class="bg-black text-white font-sans">
   <!-- Hero Section -->
-  <header class="bg-red-600 text-black py-20 px-6 text-center border-b-4 border-yellow-400 hero-container">
-    <img src="./rumpke3.png" alt="Stop Rumpke Expansion" class="max-w-2xl mx-auto h-auto" />
-    <p class="text-3xl font-black mt-6 text-white"
+  <header
+    class="bg-red-600 text-black py-2 md:py-20 px-2 md:px-6 text-center border-b-4 border-yellow-400 hero-container">
+    <img src="./rumpke3.png" alt="Stop Rumpke Expansion" class="w-full h-auto mx-auto block" />
+    <p class="text-lg md:text-3xl font-black mt-4 md:mt-6 text-white"
       style="text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;">
       Citizens For a Cleaner Montgomery County
     </p>
   </header>
 
-  <main class="max-w-5xl mx-auto py-12 px-6">
+  <main class="max-w-5xl mx-auto py-8 md:py-12 px-4 md:px-6">
     <!-- The Problem Section -->
-    <section class="mb-16">
-      <h2 class="text-4xl font-black mb-8 flex items-center gap-3 uppercase text-yellow-400">
+    <section class="mb-12 md:mb-16">
+      <h2
+        class="text-2xl md:text-4xl font-black mb-6 md:mb-8 flex items-center gap-2 md:gap-3 uppercase text-yellow-400">
         🔥 The Current Reality
       </h2>
-      <div class="bg-stone-900 p-8 rounded-none border-l-8 border-red-600 shadow-2xl">
+      <div class="bg-stone-900 p-6 md:p-8 rounded-none border-l-8 border-red-600 shadow-2xl">
         <img src="./rumpke.png" alt="Rumpke Landfill site"
-          class="w-full h-64 object-cover mb-6 border-4 border-white" />
-        <p class="text-xl leading-relaxed mb-4 font-bold">
+          class="w-full h-40 md:h-64 object-cover mb-4 md:mb-6 border-4 border-white" />
+        <p class="text-base md:text-xl leading-relaxed mb-3 md:mb-4 font-bold">
           Residents of Montgomery County are already suffering from the failures of the existing Rumpke landfill
           operations. Despite promises of odor control, the stench frequently permeates our neighborhoods, affecting our
           quality of life, property values, and health.
         </p>
-        <p class="text-xl leading-relaxed font-bold text-red-400">
+        <p class="text-base md:text-xl leading-relaxed font-bold text-red-400">
           Rumpke has failed to adequately manage the current site. Expanding it now is not just irresponsible—it is a
           direct disregard for the well-being of our community.
         </p>
@@ -146,118 +151,131 @@
     </section>
 
     <!-- Current News Section -->
-    <section class="mb-16">
-      <h2 class="text-4xl font-black mb-8 text-center uppercase text-yellow-400">
+    <section class="mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-4xl font-black mb-6 md:mb-8 text-center uppercase text-yellow-400">
         Current News
       </h2>
-      <div class="space-y-6" id="news">
+      <div class="space-y-4 md:space-y-6" id="news">
         <a href="https://www.lex18.com/news/covering-kentucky/rumpke-in-mt-sterling-opens-hotline-for-residents-reporting-odor-concerns-near-landfill"
           target="_blank"
-          class="timeline-item flex gap-4 items-start bg-stone-800 p-4 border-2 border-yellow-400 hover:bg-red-900">
-          <div class="font-black text-black bg-yellow-400 px-3 py-1 rounded-none">Dec 2025</div>
-          <div class="text-xl font-bold">Rumpke in Mt. Sterling Opens Hotline for Residents Reporting Odor Concerns Near
+          class="timeline-item flex gap-2 md:gap-4 items-start bg-stone-800 p-3 md:p-4 border-2 border-yellow-400 hover:bg-red-900">
+          <div
+            class="font-black text-black bg-yellow-400 px-2 md:px-3 py-1 rounded-none text-xs md:text-sm whitespace-nowrap">
+            Dec 2025</div>
+          <div class="text-sm md:text-xl font-bold">Rumpke in Mt. Sterling Opens Hotline for Residents Reporting Odor
+            Concerns Near
             Landfill</div>
         </a>
         <a href="https://www.lex18.com/news/covering-kentucky/mt-sterling-residents-express-landfill-concerns-to-rumpke-in-public-meeting"
           target="_blank"
-          class="timeline-item flex gap-4 items-start bg-stone-800 p-4 border-2 border-yellow-400 hover:bg-red-900">
-          <div class="font-black text-black bg-yellow-400 px-3 py-1 rounded-none">Jan 2026</div>
-          <div class="text-xl font-bold">Mt. Sterling Residents Express Landfill Concerns to Rumpke in Public Meeting
+          class="timeline-item flex gap-2 md:gap-4 items-start bg-stone-800 p-3 md:p-4 border-2 border-yellow-400 hover:bg-red-900">
+          <div
+            class="font-black text-black bg-yellow-400 px-2 md:px-3 py-1 rounded-none text-xs md:text-sm whitespace-nowrap">
+            Jan 2026</div>
+          <div class="text-sm md:text-xl font-bold">Mt. Sterling Residents Express Landfill Concerns to Rumpke in Public
+            Meeting
           </div>
         </a>
         <a href="https://fox56news.com/news/kentucky/tensions-continue-to-rise-over-possible-landfill-expansion-in-montgomery-county/"
           target="_blank"
-          class="timeline-item flex gap-4 items-start bg-stone-800 p-4 border-2 border-yellow-400 hover:bg-red-900">
-          <div class="font-black text-black bg-yellow-400 px-3 py-1 rounded-none">Feb 2026</div>
-          <div class="text-xl font-bold">Tensions Continue to Rise Over Possible Landfill Expansion in Montgomery County
+          class="timeline-item flex gap-2 md:gap-4 items-start bg-stone-800 p-3 md:p-4 border-2 border-yellow-400 hover:bg-red-900">
+          <div
+            class="font-black text-black bg-yellow-400 px-2 md:px-3 py-1 rounded-none text-xs md:text-sm whitespace-nowrap">
+            Feb 2026</div>
+          <div class="text-sm md:text-xl font-bold">Tensions Continue to Rise Over Possible Landfill Expansion in
+            Montgomery County
           </div>
         </a>
         <a href="https://msadvocate.com/stories/rumpke-issues-response-in-regard-to-concerns-expressed-at-permit-hearing,62504"
           target="_blank"
-          class="timeline-item flex gap-4 items-start bg-stone-800 p-4 border-2 border-yellow-400 hover:bg-red-900">
-          <div class="font-black text-black bg-yellow-400 px-3 py-1 rounded-none">Mar 2026</div>
-          <div class="text-xl font-bold">Rumpke Issues Response in Regard to Concerns Expressed at Permit Hearing</div>
+          class="timeline-item flex gap-2 md:gap-4 items-start bg-stone-800 p-3 md:p-4 border-2 border-yellow-400 hover:bg-red-900">
+          <div
+            class="font-black text-black bg-yellow-400 px-2 md:px-3 py-1 rounded-none text-xs md:text-sm whitespace-nowrap">
+            Mar 2026</div>
+          <div class="text-sm md:text-xl font-bold">Rumpke Issues Response in Regard to Concerns Expressed at Permit
+            Hearing</div>
         </a>
       </div>
     </section>
 
     <!-- Interactive Map Section -->
-    <section class="mb-16">
-      <h2 class="text-4xl font-black mb-8 flex items-center gap-3 uppercase text-yellow-400">
+    <section class="mb-12 md:mb-16">
+      <h2
+        class="text-2xl md:text-4xl font-black mb-6 md:mb-8 flex items-center gap-2 md:gap-3 uppercase text-yellow-400">
         🗺️ Affected Areas Map
       </h2>
-      <div id="map" class="h-96 w-full border-4 border-red-600 rounded-none overflow-hidden"></div>
+      <div id="map" class="h-64 md:h-96 w-full border-4 border-red-600 rounded-none overflow-hidden"></div>
       <p class="mt-4 text-stone-400 italic font-bold">
         The red circle represents the 15-mile diameter zone directly impacted by Rumpke's operations at 30 Larison Rd.
       </p>
     </section>
 
     <!-- Community Devastation Section -->
-    <section class="mb-16">
-      <h2 class="text-4xl font-black mb-8 flex items-center gap-3 uppercase text-red-600">
+    <section class="mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-4xl font-black mb-6 md:mb-8 flex items-center gap-2 md:gap-3 uppercase text-red-600">
         ⚠️ The Devastation of Our Community
       </h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-hover bg-stone-900 p-8 border-t-4 border-red-600 shadow-2xl">
-          <div class="text-red-500 mb-4 text-4xl">📉</div>
-          <h3 class="text-2xl font-black mb-4 uppercase text-yellow-400">
+        <div class="card-hover bg-stone-900 p-6 md:p-8 border-t-4 border-red-600 shadow-2xl">
+          <div class="text-red-500 mb-3 md:mb-4 text-3xl md:text-4xl">📉</div>
+          <h3 class="text-lg md:text-2xl font-black mb-3 md:mb-4 uppercase text-yellow-400">
             Plummeting Property Values
           </h3>
-          <p class="text-lg leading-relaxed font-bold">
+          <p class="text-base md:text-lg leading-relaxed font-bold">
             Homeowners in the south of the county are watching their life savings evaporate. Who wants to buy a home
             where you can't even open your windows? The Rumpke expansion is a death sentence for our local real estate
             market.
           </p>
         </div>
 
-        <div class="card-hover bg-stone-900 p-8 border-t-4 border-red-600 shadow-2xl">
-          <div class="text-red-500 mb-4 text-4xl">💨</div>
-          <h3 class="text-2xl font-black mb-4 uppercase text-yellow-400">
+        <div class="card-hover bg-stone-900 p-6 md:p-8 border-t-4 border-red-600 shadow-2xl">
+          <div class="text-red-500 mb-3 md:mb-4 text-3xl md:text-4xl">💨</div>
+          <h3 class="text-lg md:text-2xl font-black mb-3 md:mb-4 uppercase text-yellow-400">
             Uninhabitable Stench
           </h3>
-          <p class="text-lg leading-relaxed font-bold">
+          <p class="text-base md:text-lg leading-relaxed font-bold">
             The entire southern region of Montgomery County is becoming uninhabitable. The persistent, nauseating stench
             of rotting waste and industrial chemicals traps residents inside their own homes, stealing their right to
             fresh air.
           </p>
         </div>
 
-        <div class="card-hover bg-stone-900 p-8 border-t-4 border-red-600 shadow-2xl">
-          <div class="text-red-500 mb-4 text-4xl">⚠️</div>
-          <h3 class="text-2xl font-black mb-4 uppercase text-yellow-400">
+        <div class="card-hover bg-stone-900 p-6 md:p-8 border-t-4 border-red-600 shadow-2xl">
+          <div class="text-red-500 mb-3 md:mb-4 text-3xl md:text-4xl">⚠️</div>
+          <h3 class="text-lg md:text-2xl font-black mb-3 md:mb-4 uppercase text-yellow-400">
             Soil & Health Fears
           </h3>
-          <p class="text-lg leading-relaxed font-bold">
+          <p class="text-base md:text-lg leading-relaxed font-bold">
             Whether the fears are founded or not, the community is terrified of the long-term detriment to our soil. The
             potential for leachate leaks and chemical runoff threatens to poison the very ground our children play on
             and our farmers rely on.
           </p>
         </div>
       </div>
-      <div class="mt-8 bg-red-900/30 p-6 border-2 border-red-600 italic text-center">
-        <p class="text-xl font-black uppercase text-red-500">
+      <div class="mt-6 md:mt-8 bg-red-900/30 p-4 md:p-6 border-2 border-red-600 italic text-center">
+        <p class="text-base md:text-xl font-black uppercase text-red-500">
           "We are being forced out of our homes by a corporation that prioritizes profit over people."
         </p>
       </div>
     </section>
 
     <!-- Why Oppose Section -->
-    <section class="mb-16 grid md:grid-cols-2 gap-8">
+    <section class="mb-12 md:mb-16 grid md:grid-cols-2 gap-6 md:gap-8">
       <div class="bg-stone-900 p-6 border-4 border-red-600">
-        <div class="text-red-500 mb-4 text-4xl">📍</div>
-        <h3 class="text-3xl font-black mb-3 uppercase">
+        <div class="text-red-500 mb-3 md:mb-4 text-3xl md:text-4xl">📍</div>
+        <h3 class="text-xl md:text-3xl font-black mb-2 md:mb-3 uppercase">
           Environmental Impact
         </h3>
-        <p class="text-lg">
+        <p class="text-sm md:text-lg">
           An expansion threatens our local ecosystem, water quality, and the rural character of Montgomery County.
         </p>
       </div>
       <div class="bg-stone-900 p-6 border-4 border-red-600">
-        <div class="text-red-500 mb-4 text-4xl">👥</div>
-        <h3 class="text-3xl font-black mb-3 uppercase">
+        <div class="text-red-500 mb-3 md:mb-4 text-3xl md:text-4xl">👥</div>
+        <h3 class="text-xl md:text-3xl font-black mb-2 md:mb-3 uppercase">
           Community Health
         </h3>
-        <p class="text-lg">
+        <p class="text-sm md:text-lg">
           Increased traffic, noise, and persistent odors pose significant risks to the health and safety of our
           residents.
         </p>
@@ -265,17 +283,17 @@
     </section>
 
     <!-- Take Action Section -->
-    <section class="bg-yellow-400 p-10 text-black">
-      <h2 class="text-4xl font-black mb-8 text-center uppercase">
+    <section class="bg-yellow-400 p-6 md:p-10 text-black">
+      <h2 class="text-3xl md:text-4xl font-black mb-6 md:mb-8 text-center uppercase">
         Take Action Now
       </h2>
-      <div class="flex flex-col md:flex-row gap-6 justify-center">
+      <div class="flex flex-col gap-4 md:gap-6 justify-center">
         <button id="contactBtn"
-          class="btn-hover flex items-center gap-3 bg-black text-white px-8 py-4 rounded-none font-black text-lg uppercase cursor-pointer">
+          class="btn-hover w-full md:w-auto flex items-center justify-center gap-2 md:gap-3 bg-black text-white px-6 md:px-8 py-3 md:py-4 rounded-none font-black text-sm md:text-lg uppercase cursor-pointer">
           ✉️ Contact Officials
         </button>
         <a href="https://www.ipetitions.com/petition/petition-to-stop-the-expansion-of-the-rumpke" target="_blank"
-          class="btn-hover flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-none font-black text-lg uppercase">
+          class="btn-hover w-full md:w-auto flex items-center justify-center gap-2 md:gap-3 bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-none font-black text-sm md:text-lg uppercase">
           📄 Sign the Petition
         </a>
       </div>
@@ -291,17 +309,18 @@
       </button>
 
       <div>
-        <h2 class="text-4xl font-black uppercase text-yellow-400 mb-8 border-b-4 border-red-600 pb-4">
+        <h2
+          class="text-2xl md:text-4xl font-black uppercase text-yellow-400 mb-6 md:mb-8 border-b-4 border-red-600 pb-3 md:pb-4">
           Contact Your Representatives
         </h2>
 
-        <div class="space-y-10">
+        <div class="space-y-6 md:space-y-10">
           <!-- Governor Section -->
-          <div class="space-y-4">
-            <h3 class="text-2xl font-black uppercase text-red-500 flex items-center gap-2">
+          <div class="space-y-3 md:space-y-4">
+            <h3 class="text-lg md:text-2xl font-black uppercase text-red-500 flex items-center gap-2">
               👥 Governor Andy Beshear
             </h3>
-            <div class="space-y-2 text-lg font-bold">
+            <div class="space-y-1 md:space-y-2 text-sm md:text-lg font-bold">
               <p class="flex items-center gap-3">
                 <span class="text-yellow-400">📞</span> (502) 564-2611
               </p>
@@ -313,18 +332,18 @@
                 <span class="ml-8">Capitol Avenue<br>
                   Frankfort, KY 40601</span>
               </p>
-              <p class="text-stone-400 italic mt-2">
+              <p class="text-stone-400 italic text-xs md:text-sm mt-2">
                 Demand that he intervene to protect Montgomery County from environmental devastation.
               </p>
             </div>
           </div>
 
           <!-- Senator Section -->
-          <div class="space-y-4">
-            <h3 class="text-2xl font-black uppercase text-red-500 flex items-center gap-2">
+          <div class="space-y-3 md:space-y-4">
+            <h3 class="text-lg md:text-2xl font-black uppercase text-red-500 flex items-center gap-2">
               👥 State Senator Stephen West
             </h3>
-            <div class="space-y-2 text-lg font-bold">
+            <div class="space-y-1 md:space-y-2 text-sm md:text-lg font-bold">
               <p class="flex items-center gap-3">
                 <span class="text-yellow-400">📞</span> (502) 564-8100
               </p>
@@ -336,7 +355,7 @@
                 <span class="ml-8">Capitol Avenue<br>
                   Frankfort, KY 40601</span>
               </p>
-              <p class="text-stone-400 italic mt-2">
+              <p class="text-stone-400 italic text-xs md:text-sm mt-2">
                 Tell him his constituents in Jeffersonville are suffering and we will not be ignored.
               </p>
             </div>
@@ -344,7 +363,7 @@
         </div>
 
         <button id="closeModalBtn"
-          class="mt-10 w-full bg-red-600 text-white py-4 font-black uppercase text-xl hover:bg-red-700 transition cursor-pointer">
+          class="mt-6 md:mt-10 w-full bg-red-600 text-white py-3 md:py-4 font-black uppercase text-base md:text-xl hover:bg-red-700 transition cursor-pointer">
           Close Instructions
         </button>
       </div>
