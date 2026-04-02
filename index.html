@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="theme-color" content="#dc2626">
+  <meta name="description" content="Citizens For a Cleaner Montgomery County - Stop the Rumpke Expansion">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./rumpke3.png">
   <title>Stop Rumpke Expansion - Montgomery County</title>
 
   <!-- Tailwind CSS via CDN -->
@@ -429,6 +433,13 @@
     L.marker([37.931, -83.945], { icon: customIcon }).bindPopup(
       '<div class="text-black font-bold"><h3 class="text-lg font-black uppercase mb-1">Rumpke Landfill Site</h3><p>30 Larison Rd, Jeffersonville, KY 40337. The epicenter of the environmental crisis.</p></div>'
     ).addTo(map);
+
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(err => {
+        console.log('Service Worker registration failed:', err);
+      });
+    }
   </script>
 </body>
 

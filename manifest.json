@@ -1,0 +1,34 @@
+{
+  "name": "Stop the Rumpke Expansion - Citizens For a Cleaner Montgomery County",
+  "short_name": "Stop Rumpke Expansion",
+  "description": "Fight back against the Rumpke landfill expansion proposal in Montgomery County, Kentucky",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#dc2626",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "./rumpke3.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./rumpke3.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["activism", "environment"],
+  "screenshots": [
+    {
+      "src": "./rumpke3.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
