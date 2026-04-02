@@ -1,0 +1,5 @@
+{
+  "name": "Stop Rumpke Expansion - Montgomery County",
+  "description": "A grassroots activist website opposing the expansion of the Rumpke landfill in Montgomery County, Kentucky, highlighting concerns about odor control and community health.",
+  "requestFramePermissions": ["geolocation"]
+}
