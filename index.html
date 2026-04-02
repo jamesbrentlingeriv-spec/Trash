@@ -1,13 +1,409 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>Stop Rumpke Expansion - Montgomery County</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Custom Styles -->
+  <style>
+    .animate-scale {
+      animation: pulse-scale 2s infinite;
+    }
+
+    @keyframes pulse-scale {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+    }
+
+    .timeline-item {
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: scale(1.02) translateX(10px);
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: #292524;
+      border: 4px solid #dc2626;
+      max-width: 42rem;
+      width: 100%;
+      position: relative;
+      padding: 2rem;
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.3s;
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1) translateY(0);
+    }
+
+    .btn-hover {
+      transition: transform 0.2s;
+    }
+
+    .btn-hover:hover {
+      transform: scale(1.1);
+    }
+
+    .hero-container {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white font-sans">
+  <!-- Hero Section -->
+  <header class="bg-red-600 text-black py-20 px-6 text-center border-b-4 border-yellow-400 hero-container">
+    <h1 class="text-6xl font-black mb-4 uppercase tracking-tighter animate-scale">
+      Stop the Rumpke Expansion
+    </h1>
+    <p class="text-2xl font-bold max-w-2xl mx-auto uppercase fade-in-up">
+      Montgomery County is NOT a dumping ground!
+    </p>
+  </header>
+
+  <main class="max-w-5xl mx-auto py-12 px-6">
+    <!-- The Problem Section -->
+    <section class="mb-16">
+      <h2 class="text-4xl font-black mb-8 flex items-center gap-3 uppercase text-yellow-400">
+        🔥 The Current Reality
+      </h2>
+      <div class="bg-stone-900 p-8 rounded-none border-l-8 border-red-600 shadow-2xl">
+        <img src="/rumpke.png" alt="Rumpke Landfill site" class="w-full h-64 object-cover mb-6 border-4 border-white" />
+        <p class="text-xl leading-relaxed mb-4 font-bold">
+          Residents of Montgomery County are already suffering from the failures of the existing Rumpke landfill
+          operations. Despite promises of odor control, the stench frequently permeates our neighborhoods, affecting our
+          quality of life, property values, and health.
+        </p>
+        <p class="text-xl leading-relaxed font-bold text-red-400">
+          Rumpke has failed to adequately manage the current site. Expanding it now is not just irresponsible—it is a
+          direct disregard for the well-being of our community.
+        </p>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="mb-16">
+      <h2 class="text-4xl font-black mb-8 text-center uppercase text-yellow-400">
+        A History of Broken Promises
+      </h2>
+      <div class="space-y-6" id="timeline">
+        <a href="#"
+          class="timeline-item flex gap-4 items-start bg-stone-800 p-4 border-2 border-yellow-400 hover:bg-red-900">
+          <div class="font-black text-black bg-yellow-400 px-3 py-1 rounded-none">2021</div>
+          <div class="text-xl font-bold">Rumpke promises state-of-the-art odor control technology.</div>
+        </a>
+        <a href="#"
+          class="timeline-item flex gap-4 items-start bg-stone-800 p-4 border-2 border-yellow-400 hover:bg-red-900">
+          <div class="font-black text-black bg-yellow-400 px-3 py-1 rounded-none">2023</div>
+          <div class="text-xl font-bold">Major regulatory violation issued for leachate management failures.</div>
+        </a>
+        <a href="#"
+          class="timeline-item flex gap-4 items-start bg-stone-800 p-4 border-2 border-yellow-400 hover:bg-red-900">
+          <div class="font-black text-black bg-yellow-400 px-3 py-1 rounded-none">2024</div>
+          <div class="text-xl font-bold">Community petition with 2,000 signatures ignored by county officials.</div>
+        </a>
+        <a href="#"
+          class="timeline-item flex gap-4 items-start bg-stone-800 p-4 border-2 border-yellow-400 hover:bg-red-900">
+          <div class="font-black text-black bg-yellow-400 px-3 py-1 rounded-none">2025</div>
+          <div class="text-xl font-bold">Expansion proposal announced despite ongoing, unresolved odor complaints.</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="mb-16">
+      <h2 class="text-4xl font-black mb-8 flex items-center gap-3 uppercase text-yellow-400">
+        🗺️ Affected Areas Map
+      </h2>
+      <div id="map" class="h-96 w-full border-4 border-red-600 rounded-none overflow-hidden"></div>
+      <p class="mt-4 text-stone-400 italic font-bold">
+        The red circle represents the 15-mile diameter zone directly impacted by Rumpke's operations at 30 Larison Rd.
+      </p>
+    </section>
+
+    <!-- Community Devastation Section -->
+    <section class="mb-16">
+      <h2 class="text-4xl font-black mb-8 flex items-center gap-3 uppercase text-red-600">
+        ⚠️ The Devastation of Our Community
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-hover bg-stone-900 p-8 border-t-4 border-red-600 shadow-2xl">
+          <div class="text-red-500 mb-4 text-4xl">📉</div>
+          <h3 class="text-2xl font-black mb-4 uppercase text-yellow-400">
+            Plummeting Property Values
+          </h3>
+          <p class="text-lg leading-relaxed font-bold">
+            Homeowners in the south of the county are watching their life savings evaporate. Who wants to buy a home
+            where you can't even open your windows? The Rumpke expansion is a death sentence for our local real estate
+            market.
+          </p>
+        </div>
+
+        <div class="card-hover bg-stone-900 p-8 border-t-4 border-red-600 shadow-2xl">
+          <div class="text-red-500 mb-4 text-4xl">💨</div>
+          <h3 class="text-2xl font-black mb-4 uppercase text-yellow-400">
+            Uninhabitable Stench
+          </h3>
+          <p class="text-lg leading-relaxed font-bold">
+            The entire southern region of Montgomery County is becoming uninhabitable. The persistent, nauseating stench
+            of rotting waste and industrial chemicals traps residents inside their own homes, stealing their right to
+            fresh air.
+          </p>
+        </div>
+
+        <div class="card-hover bg-stone-900 p-8 border-t-4 border-red-600 shadow-2xl">
+          <div class="text-red-500 mb-4 text-4xl">⚠️</div>
+          <h3 class="text-2xl font-black mb-4 uppercase text-yellow-400">
+            Soil & Health Fears
+          </h3>
+          <p class="text-lg leading-relaxed font-bold">
+            Whether the fears are founded or not, the community is terrified of the long-term detriment to our soil. The
+            potential for leachate leaks and chemical runoff threatens to poison the very ground our children play on
+            and our farmers rely on.
+          </p>
+        </div>
+      </div>
+      <div class="mt-8 bg-red-900/30 p-6 border-2 border-red-600 italic text-center">
+        <p class="text-xl font-black uppercase text-red-500">
+          "We are being forced out of our homes by a corporation that prioritizes profit over people."
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Oppose Section -->
+    <section class="mb-16 grid md:grid-cols-2 gap-8">
+      <div class="bg-stone-900 p-6 border-4 border-red-600">
+        <div class="text-red-500 mb-4 text-4xl">📍</div>
+        <h3 class="text-3xl font-black mb-3 uppercase">
+          Environmental Impact
+        </h3>
+        <p class="text-lg">
+          An expansion threatens our local ecosystem, water quality, and the rural character of Montgomery County.
+        </p>
+      </div>
+      <div class="bg-stone-900 p-6 border-4 border-red-600">
+        <div class="text-red-500 mb-4 text-4xl">👥</div>
+        <h3 class="text-3xl font-black mb-3 uppercase">
+          Community Health
+        </h3>
+        <p class="text-lg">
+          Increased traffic, noise, and persistent odors pose significant risks to the health and safety of our
+          residents.
+        </p>
+      </div>
+    </section>
+
+    <!-- Take Action Section -->
+    <section class="bg-yellow-400 p-10 text-black">
+      <h2 class="text-4xl font-black mb-8 text-center uppercase">
+        Take Action Now
+      </h2>
+      <div class="flex flex-col md:flex-row gap-6 justify-center">
+        <button id="contactBtn"
+          class="btn-hover flex items-center gap-3 bg-black text-white px-8 py-4 rounded-none font-black text-lg uppercase cursor-pointer">
+          ✉️ Contact Officials
+        </button>
+        <a href="#"
+          class="btn-hover flex items-center gap-3 bg-red-600 text-white px-8 py-4 rounded-none font-black text-lg uppercase">
+          📄 Sign the Petition
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="contactModal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="closeModal"
+        class="absolute top-4 right-4 text-stone-400 hover:text-white transition cursor-pointer text-3xl">
+        ✕
+      </button>
+
+      <div>
+        <h2 class="text-4xl font-black uppercase text-yellow-400 mb-8 border-b-4 border-red-600 pb-4">
+          Contact Your Representatives
+        </h2>
+
+        <div class="space-y-10">
+          <!-- Governor Section -->
+          <div class="space-y-4">
+            <h3 class="text-2xl font-black uppercase text-red-500 flex items-center gap-2">
+              👥 Governor Andy Beshear
+            </h3>
+            <div class="space-y-2 text-lg font-bold">
+              <p class="flex items-center gap-3">
+                <span class="text-yellow-400">📞</span> (502) 564-2611
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-yellow-400">🌐</span> governor.ky.gov
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-yellow-400">✉️</span> Office of the Governor<br>
+                <span class="ml-8">Capitol Avenue<br>
+                  Frankfort, KY 40601</span>
+              </p>
+              <p class="text-stone-400 italic mt-2">
+                Demand that he intervene to protect Montgomery County from environmental devastation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Senator Section -->
+          <div class="space-y-4">
+            <h3 class="text-2xl font-black uppercase text-red-500 flex items-center gap-2">
+              👥 State Senator Stephen West
+            </h3>
+            <div class="space-y-2 text-lg font-bold">
+              <p class="flex items-center gap-3">
+                <span class="text-yellow-400">📞</span> (502) 564-8100
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-yellow-400">✉️</span> steve.west@lrc.ky.gov
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-yellow-400">📬</span> Kentucky State Senate<br>
+                <span class="ml-8">Capitol Avenue<br>
+                  Frankfort, KY 40601</span>
+              </p>
+              <p class="text-stone-400 italic mt-2">
+                Tell him his constituents in Jeffersonville are suffering and we will not be ignored.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button id="closeModalBtn"
+          class="mt-10 w-full bg-red-600 text-white py-4 font-black uppercase text-xl hover:bg-red-700 transition cursor-pointer">
+          Close Instructions
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-8 text-stone-500 border-t border-stone-700 bg-black">
+    &copy; 2026 Citizens for a Clean Montgomery County. FIGHT BACK!
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Custom Script -->
+  <script>
+    // Modal functionality
+    const contactModal = document.getElementById('contactModal');
+    const contactBtn = document.getElementById('contactBtn');
+    const closeModal = document.getElementById('closeModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    contactBtn.addEventListener('click', () => {
+      contactModal.classList.add('active');
+    });
+
+    closeModal.addEventListener('click', () => {
+      contactModal.classList.remove('active');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      contactModal.classList.remove('active');
+    });
+
+    // Close modal when clicking outside
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove('active');
+      }
+    });
+
+    // Initialize map
+    const map = L.map('map').setView([37.931, -83.945], 11);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add circle (15-mile radius)
+    L.circle([37.931, -83.945], {
+      color: 'red',
+      fillColor: 'red',
+      fillOpacity: 0.2,
+      radius: 12070 // 12070 meters ~= 7.5 miles
+    }).addTo(map);
+
+    // Add marker
+    const customIcon = L.divIcon({
+      className: 'custom-icon',
+      html: '<div class="bg-red-600 w-4 h-4 rounded-full border-2 border-white shadow-lg"></div>',
+      iconSize: [16, 16]
+    });
+
+    L.marker([37.931, -83.945], { icon: customIcon }).bindPopup(
+      '<div class="text-black font-bold"><h3 class="text-lg font-black uppercase mb-1">Rumpke Landfill Site</h3><p>30 Larison Rd, Jeffersonville, KY 40337. The epicenter of the environmental crisis.</p></div>'
+    ).addTo(map);
+  </script>
+</body>
+
+</html>
