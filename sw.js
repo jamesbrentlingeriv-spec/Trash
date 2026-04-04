@@ -1,4 +1,4 @@
-const cacheName = "stop-rumpke-v1";
+                                                              const cacheName = "stop-rumpke-v1";
 const urlsToCache = [
   "./",
   "./index.html",
